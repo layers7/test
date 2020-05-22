@@ -2,14 +2,24 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
-    <form action="">
-        <p>text : <input type="text" name="id" value=""></p>
-        <p>password : <input type="password" name="pwd" value=""></p>
-        <p>textarea :
-            <textarea cols="50" rows="2"></textarea>
-        </p>
-    </form>
+    <img src="https://developers.kakao.com/sdk/js/resources/story/icon_small.png"
+         onclick="shareStory()"/>
+    <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png"
+         onclick="sendLink()"/>
+    <script type='text/javascript'>
+        //<![CDATA[
+        //사용할 앱의 키 값
+        Kakao.init('');
+        function shareStory() {
+            Kakao.Story.open({
+                url: 'http://blog.kakaocorp.co.kr/390',
+                text: '카카오검색에서 카카오스토리를! :)'
+            });
+        }
+        //]]>
+    </script>
 </body>
 </html>
